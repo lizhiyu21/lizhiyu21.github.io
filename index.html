@@ -162,6 +162,228 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/24/%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poetastro">
+      <meta itemprop="description" content="走进奶牛猫（一般不建议）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奶牛猫受益者联盟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/24/%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="post-title-link" itemprop="url">数据与算法期末复习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-24 21:20:12 / 修改时间：21:20:13" itemprop="dateCreated datePublished" datetime="2023-02-24T21:20:12+08:00">2023-02-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%B1%E4%BD%9B%E8%84%9A/" itemprop="url" rel="index"><span itemprop="name">抱佛脚</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="二元关系"><a href="#二元关系" class="headerlink" title="二元关系"></a>二元关系</h4><p>设R是集合M上的一个二元关系</p>
+<p><strong>自反性</strong>：任意a属于M，都有(a,a)属于R</p>
+<p>反自反性：任意a属于M，都有(a,a)不属于R</p>
+<p><strong>对称性</strong>：任意(a,b)属于R，有(b,a)属于R</p>
+<p>反对称性：任意(a,b)属于R，且a不等于b，则有(b,a)不属于R</p>
+<p><strong>传递性</strong>：如果(a,b)和(b,c)属于R，则(a,c)属于R</p>
+<p><strong>等价关系</strong>：满足自反性、对称性、传递性。（例如&#x3D;关系）</p>
+<p><strong>偏序关系</strong>：满足自反性、反对称性、传递性。（例如$\le$关系）</p>
+<p><strong>拟序关系（严格偏序关系）</strong>：满足反自反性、反对称性、传递性。（例如&lt;关系）</p>
+<p><strong>全序关系</strong>：是偏序关系，且任意a，b，不是aRb就是bRa。（偏序关系包含全序关系）</p>
+<hr>
+<h4 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h4><p><strong>队列</strong>：队尾（rear）允许插入，队头（front）允许删除，插入操作成为入队，删除操作成为出队。</p>
+<p><strong>优先级队列</strong>：优先级队列的每次操作都是针对队列中具有最高优先权的元素。</p>
+<ul>
+<li>基于无序顺序表实现：入队$O(1)$，出队$O(N)$，访问最高优先级元素$O(N)$</li>
+<li>基于有序顺序表实现：入队$O(N)$，出队$O(N)$，访问最高优先级元素$O(1)$</li>
+<li>基于无序链表：入$O(1)$，出$O(N)$，访问最高优先级$O(N)$</li>
+<li>基于有序链表：入$O(N)$，出$O(1)$，访问最高优先级$O(1)$</li>
+</ul>
+<p>根据元素在队列中的停留时间来认定优先权值，可以将栈和队列统一起来。</p>
+<hr>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p><strong>模式匹配</strong>：</p>
+<h6 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h6><p>首先对模式串P进行预处理，找出对于P$[0,j]$的前缀和P$[1,j]$的后缀最大相等的长度（设为next[j]），则在此处失配后，如果j&gt;0，则匹配串指针j&#x3D;next[j-1]，否则i++。全程主串的指针i不回溯。</p>
+<img src="C:\Users\zhiyuli\AppData\Roaming\Typora\typora-user-images\image-20230216202257116.png" alt="image-20230216202257116" style="zoom:50%;" />
+
+<h6 id="Horspool算法"><a href="#Horspool算法" class="headerlink" title="Horspool算法"></a>Horspool算法</h6><p>先将模式串和文本开头对齐，比对模式串最后一个字符，并依情况向后移动。最差效率$O(nm)$，对于随机文本来说则是$O(n)$。</p>
+<hr>
+<h4 id="Huffman树与编码"><a href="#Huffman树与编码" class="headerlink" title="Huffman树与编码"></a>Huffman树与编码</h4><p><strong>带权路径长度</strong>：</p>
+<p>记为$WPL&#x3D;\Sigma W_iP_i$，其中$W_i$为叶子结点的权值，$P_i$为叶子结点到根的路径长度。</p>
+<p><strong>Huffman树</strong>：</p>
+<p>在所有路径长度相同的二叉树中，WPL最小的树称为HUFFMAN树（或最优二叉树）。</p>
+<p><strong>Huffman算法</strong>：</p>
+<ol>
+<li>n个权值构造n棵树，这些树只有根节点，没有左右子树。</li>
+<li>选取集合中根值最小的两棵树，分别为左右子树构造一棵树，根节点权值设为左右子树根节点权值之和。</li>
+<li>删去旧两棵树，加入新树。</li>
+<li>循环往复直至只剩一棵树，这棵树就是Huffman树。</li>
+</ol>
+<p><strong>Huffman编码</strong>：</p>
+<p>字符出现的概率即为Huffman树中叶子结点的权值，平均编码长度最小。（缺点：无法差错和纠错）</p>
+<hr>
+<h4 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h4><p>堆是完全二叉树。</p>
+<p><strong>最大堆</strong>：堆中任一结点的值都小于其父结点的值，其堆顶元素最大。</p>
+<p><strong>最小堆</strong>：与上相反。</p>
+<p>由于堆是完全二叉树，因此可以顺序储存在一维数组中，则A[i]的左孩子结点和右孩子结点分别为A[2i+1]和A[2i+2]。</p>
+<p><strong>自顶向下堆化</strong>：最大堆中某结点值小于子结点。O(h)</p>
+<p><strong>自底向上堆化</strong>：最大堆中某结点值大于父结点。O(h)</p>
+<p>堆的插入操作即是在堆底加入点后，执行自底向上堆化，也可以据此构建新堆，这称为自顶向下的堆构造（有点弯弯绕绕的），复杂度小于O(nlogn)。</p>
+<p>自底向上的堆构造复杂度为O(n)。</p>
+<p><strong>堆的删除堆顶操作</strong>：删除堆顶并返回值，将堆尾结点放到堆顶，并自顶向下堆化。</p>
+<hr>
+<h4 id="图"><a href="#图" class="headerlink" title="图"></a>图</h4><p><strong>深度优先遍历</strong></p>
+<p>时间复杂度：对于邻接表，O(n+e)；对于邻接矩阵，O(n^2)</p>
+<p>空间复杂度：对于邻接表和邻接矩阵都是O(n)</p>
+<p><strong>广度优先遍历</strong></p>
+<p>时间复杂度：对于邻接表，O(n+e)；对于邻接矩阵，O(n^2)</p>
+<p>空间复杂度：O(e)或O(n)，根据具体实现决定</p>
+<p><strong>普里姆（Prim）算法</strong>：</p>
+<ol>
+<li>初始化最小树为空集，从图中任取一个顶点加入最小树。</li>
+<li>取出距离最小树最短的点和边，加入最小树。</li>
+<li>重复直到最小树包含所有点。</li>
+</ol>
+<ul>
+<li>时间复杂度为O(n^2)，适合稠密图。</li>
+</ul>
+<p><strong>克鲁斯卡尔（Kruskal）算法</strong>：</p>
+<ol>
+<li>对图中所有边按权值排序，初始化最小树为空。</li>
+<li>取出权值最小的边，如果它在最小树中能构成环则舍弃，否则就加入最小树。</li>
+<li>重复直到n-1条边加入了最小树。</li>
+</ol>
+<ul>
+<li>使用堆排序来对边进行排序。</li>
+<li>如果采用高级排序方法，时间复杂度为O(e*log2(e))，适合稀疏图。</li>
+</ul>
+<p><strong>迪克斯特拉（Dijkstra）算法</strong>：</p>
+<p>求解单源最短路径</p>
+<ol>
+<li>初始化最短路径树为空，取源点s。</li>
+<li>沿s发出的边进行拓展，更新s到不在树中各顶点的最短距离。</li>
+<li>找出距离s最近的不在树里的点v，将v和相应的边加入最短路径树。</li>
+<li>沿v发出的边进行拓展，更新s到不在树中各顶点的最短距离。</li>
+<li>重复直至最短路径树包含所有点。</li>
+</ol>
+<ul>
+<li>时间复杂度为O(n^2)，属于贪心算法。</li>
+</ul>
+<p><strong>弗洛伊德Floyd算法</strong>：</p>
+<p><img src="C:\Users\zhiyuli\AppData\Roaming\Typora\typora-user-images\image-20230220165549169.png" alt="image-20230220165549169"></p>
+<hr>
+<h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><p>平均查找长度$ASL&#x3D;\Sigma P_iC_i$，后两个分别代表第i个元素被查找的概率和查找所需要的比较次数，例如顺序查找的ASL&#x3D;(n+1)&#x2F;2，属于蛮力算法。</p>
+<p><strong>折半查找</strong>：（线性查找表对于关键词来说是有序的）平均查找长度为O(log2(n))，属于减治算法。</p>
+<p><strong>斐波那契查找</strong>：添加关键词使表长为F(n)-1，则可以分为两个子表和一个中间点，表长分别为F(n-1)-1和F(n-2)-1。表长较大时平均性能要好于折半查找，最坏情况则不如。</p>
+<p><img src="C:\Users\zhiyuli\AppData\Roaming\Typora\typora-user-images\image-20230220194258257.png" alt="image-20230220194258257"></p>
+<p><strong>哈希冲突处理</strong>：</p>
+<h6 id="开散列法"><a href="#开散列法" class="headerlink" title="开散列法"></a>开散列法</h6><p>也成为链地址法，将散列到同一地址的不同关键词存入相应的链表中，一般选择平均链表长度为5~10.</p>
+<h6 id="闭散列法"><a href="#闭散列法" class="headerlink" title="闭散列法"></a>闭散列法</h6><p>也叫开放定址法，当表上已经有一个与待搜索关键词不同的元素，探测其他位置。</p>
+<ul>
+<li>在保证哈希表足够稀疏的情况下，线性探测散列具有最快的查找性能；</li>
+<li>双重散列使用内存最为有效，但时间复杂度高于线性探测散列，散列表趋近于满时，双重散列性能远优于线性探测散列。</li>
+<li>链地址法容易实现，但平均情况下性能不如开放地址法。</li>
+</ul>
+<p>双重散列函数不能取0是为了防止死循环；又必须与表长互素，否则某些探测序列会非常短。</p>
+<hr>
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><h6 id="简单排序"><a href="#简单排序" class="headerlink" title="简单排序"></a>简单排序</h6><h4 id=""><a href="#" class="headerlink" title=""></a><img src="C:\Users\zhiyuli\AppData\Roaming\Typora\typora-user-images\image-20230221184059168.png" alt="image-20230221184059168"></h4><ul>
+<li><p>插入排序算法时间复杂度与待排序序列的初始排列无关。</p>
+</li>
+<li><p>希尔排序的性能决定于步长序列的选择，例如一个好的序列$h_i&#x3D;4^i+3*2^{i-1}+1$</p>
+</li>
+<li><p>选择排序比较次数多而交换次数少，适用于元素规模大但关键字规模小的情况。（不稳定）</p>
+</li>
+<li><p>简单排序方法的平均时间复杂度都是O(n^2)</p>
+</li>
+</ul>
+<h6 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h6><ul>
+<li><p>基于分治思想，最好情况下的时间复杂度为O(n*log2(n))，平均情况为O(nln(n))，最坏情况（这里是待排序列已经完全有序的情况）下退化到O(n^2)。</p>
+</li>
+<li><p>不稳定。</p>
+</li>
+<li><p>为避免最坏情况，可以采用中间元素法，即取序列左端元素、中间元素和右端元素，取关键字值位于中间的元素作为划分元素。</p>
+</li>
+</ul>
+<h6 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h6><ul>
+<li>二路归并：时间复杂度O(n)，需要规模为n的空间来储存归并得到的新序列。利用它来实现下面的归并排序。</li>
+<li><strong>自底向上的归并排序</strong>：时间复杂度为O(n*log2(n))，而且不会恶化。但需要与n成正比的额外内存空间。（稳定）</li>
+<li><strong>自顶向下的归并排序</strong>：类似，但是从长到短归并，递归调用。</li>
+<li>归并排序顺序访问数据，因此可以作为链表排序选择的方法。</li>
+</ul>
+<h6 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h6><ol>
+<li>对待待排序列，采用自底向上的堆构造方法来构造初始的最大堆。</li>
+<li>堆尾和堆顶交换，堆序列长度-1；</li>
+<li>对堆顶元素筛运算，重新调整成一个堆。</li>
+<li>重复直到堆为空。</li>
+</ol>
+<hr>
+<h4 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h4><p>定义$E(x)&#x3D;x-\tilde{x}$为近似值对于真实值的绝对误差；</p>
+<p>$E[f(x)]&#x3D;f’(x)E(x)$，对于可微函数成立。</p>
+<h6 id="有效数字"><a href="#有效数字" class="headerlink" title="有效数字"></a>有效数字</h6><p>已知$x$为真实值，而$\tilde{x}$为近似值，如果k是下式成立的最大整数，则称$\tilde{x}$精确到小数点后第k位。<br>$$<br>|x-\tilde{x}|\le \frac{1}{2} \times 10^{-k}<br>$$</p>
+<h6 id="前向误差-amp-后向误差"><a href="#前向误差-amp-后向误差" class="headerlink" title="前向误差&amp;后向误差"></a>前向误差&amp;后向误差</h6><p>前向误差$&#x3D;|\hat{y}-y|$，后向误差为$&#x3D;|F(\hat{y})-x|&#x3D;|\hat{x}-x|$.<br>$$<br>\text { cond }&#x3D;\frac{\mid \text { relative forward error } \mid}{\mid \text { relative backward error } \mid}<br>$$<br>cond&lt;&#x3D;1表明问题是不敏感的，是良态的；</p>
+<p>cond&gt;&gt;1则表明问题是敏感的，是病态的。<br>$$<br>\text { cond }&#x3D;\frac{|[f(\hat{x})-f(x)] &#x2F; f(x)|}{|(\hat{x}-x) &#x2F; x|} \approx\left|\frac{f^{\prime}(x) \Delta x &#x2F; f(x)}{\Delta x &#x2F; x}\right|&#x3D;\left|\frac{x f^{\prime}(x)}{f(x)}\right|<br>$$<br>函数与其反函数，条件数互为倒数。</p>
+<h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -335,149 +557,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/15/%E6%95%B0%E7%AE%97%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Poetastro">
-      <meta itemprop="description" content="走进奶牛猫（一般不建议）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="奶牛猫受益者联盟">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/02/15/%E6%95%B0%E7%AE%97%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A01/" class="post-title-link" itemprop="url">数算期末复习（1）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-02-15 21:21:05" itemprop="dateCreated datePublished" datetime="2023-02-15T21:21:05+08:00">2023-02-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-19 00:00:35" itemprop="dateModified" datetime="2023-02-19T00:00:35+08:00">2023-02-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%B1%E4%BD%9B%E8%84%9A/" itemprop="url" rel="index"><span itemprop="name">抱佛脚</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h4 id="二元关系"><a href="#二元关系" class="headerlink" title="二元关系"></a>二元关系</h4><hr>
-<p>设R是集合M上的一个二元关系</p>
-<p><strong>自反性</strong>：任意a属于M，都有(a,a)属于R</p>
-<p>反自反性：任意a属于M，都有(a,a)不属于R</p>
-<p><strong>对称性</strong>：任意(a,b)属于R，有(b,a)属于R</p>
-<p>反对称性：任意(a,b)属于R，且a不等于b，则有(b,a)不属于R</p>
-<p><strong>传递性</strong>：如果(a,b)和(b,c)属于R，则(a,c)属于R</p>
-<p><strong>等价关系</strong>：满足自反性、对称性、传递性。（例如&#x3D;关系）</p>
-<p><strong>偏序关系</strong>：满足自反性、反对称性、传递性。（例如$\le$关系）</p>
-<p><strong>拟序关系（严格偏序关系）</strong>：满足反自反性、反对称性、传递性。（例如&lt;关系）</p>
-<p><strong>全序关系</strong>：是偏序关系，且任意a，b，不是aRb就是bRa。（偏序关系包含全序关系）</p>
-<hr>
-<h4 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h4><hr>
-<p><strong>队列</strong>：队尾（rear）允许插入，队头（front）允许删除，插入操作成为入队，删除操作成为出队。</p>
-<p><strong>优先级队列</strong>：优先级队列的每次操作都是针对队列中具有最高优先权的元素。</p>
-<ul>
-<li>基于无序顺序表实现：入队$O(1)$，出队$O(N)$，访问最高优先级元素$O(N)$</li>
-<li>基于有序顺序表实现：入队$O(N)$，出队$O(N)$，访问最高优先级元素$O(1)$</li>
-<li>基于无序链表：入$O(1)$，出$O(N)$，访问最高优先级$O(N)$</li>
-<li>基于有序链表：入$O(N)$，出$O(1)$，访问最高优先级$O(1)$</li>
-</ul>
-<p>根据元素在队列中的停留时间来认定优先权值，可以将栈和队列统一起来。</p>
-<hr>
-<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><hr>
-<p><strong>模式匹配</strong>：</p>
-<h6 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h6><p>首先对模式串P进行预处理，找出对于P$[0,j]$的前缀和P$[1,j]$的后缀最大相等的长度（设为next[j]），则在此处失配后，如果j&gt;0，则匹配串指针j&#x3D;next[j-1]，否则i++。全程主串的指针i不回溯。</p>
-<img src="C:\Users\zhiyuli\AppData\Roaming\Typora\typora-user-images\image-20230216202257116.png" alt="image-20230216202257116" style="zoom:50%;" />
-
-<h6 id="Horspool算法"><a href="#Horspool算法" class="headerlink" title="Horspool算法"></a>Horspool算法</h6><p>先将模式串和文本开头对齐，比对模式串最后一个字符，并依情况向后移动。最差效率$O(nm)$，对于随机文本来说则是$O(n)$。</p>
-<hr>
-<h4 id="Huffman树与编码"><a href="#Huffman树与编码" class="headerlink" title="Huffman树与编码"></a>Huffman树与编码</h4><hr>
-<p><strong>带权路径长度</strong>：</p>
-<p>记为$WPL&#x3D;\Sigma W_iP_i$，其中$W_i$为叶子结点的权值，$P_i$为叶子结点到根的路径长度。</p>
-<p><strong>Huffman树</strong>：</p>
-<p>在所有路径长度相同的二叉树中，WPL最小的树称为HUFFMAN树（或最优二叉树）。</p>
-<p><strong>Huffman算法</strong>：</p>
-<ol>
-<li>n个权值构造n棵树，这些树只有根节点，没有左右子树。</li>
-<li>选取集合中根值最小的两棵树，分别为左右子树构造一棵树，根节点权值设为左右子树根节点权值之和。</li>
-<li>删去旧两棵树，加入新树。</li>
-<li>循环往复直至只剩一棵树，这棵树就是Huffman树。</li>
-</ol>
-<p><strong>Huffman编码</strong>：</p>
-<p>字符出现的概率即为Huffman树中叶子结点的权值，平均编码长度最小。（缺点：无法差错和纠错）</p>
-<hr>
-<h4 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h4><hr>
-<p>堆是完全二叉树。</p>
-<p><strong>最大堆</strong>：堆中任一结点的值都小于其父结点的值，其堆顶元素最大。</p>
-<p><strong>最小堆</strong>：与上相反。</p>
-<p>由于堆是完全二叉树，因此可以顺序储存在一维数组中，则A[i]的左孩子结点和右孩子结点分别为A[2i+1]和A[2i+2]。</p>
-<p><strong>自顶向下堆化</strong>：最大堆中某结点值小于子结点。O(h)</p>
-<p><strong>自底向上堆化</strong>：最大堆中某结点值大于父结点。O(h)</p>
-<p>堆的插入操作即是在堆底加入点后，执行自底向上堆化，也可以据此构建新堆，这称为自顶向下的堆构造（有点弯弯绕绕的），复杂度小于O(nlogn)。</p>
-<p>自底向上的堆构造复杂度为O(n)。</p>
-<p><strong>堆的删除堆顶操作</strong>：删除堆顶并返回值，将堆尾结点放到堆顶，并自顶向下堆化。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
 
@@ -595,12 +674,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">2k</span>
+    <span title="站点总字数">4k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">3 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
