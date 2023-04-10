@@ -187,7 +187,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-03-08 20:18:50 / 修改时间：20:20:28" itemprop="dateCreated datePublished" datetime="2023-03-08T20:18:50+08:00">2023-03-08</time>
+              <time title="创建时间：2023-03-08 20:18:50 / 修改时间：20:22:27" itemprop="dateCreated datePublished" datetime="2023-03-08T20:18:50+08:00">2023-03-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -224,47 +224,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-Pytorch核心模块"><a href="#1-Pytorch核心模块" class="headerlink" title="1 Pytorch核心模块"></a>1 Pytorch核心模块</h3><h4 id="1-1-torch"><a href="#1-1-torch" class="headerlink" title="1.1 torch"></a>1.1 torch</h4><p>包含Pytorch常用的激活函数、Tensor操作、生成一定形状Tensor的函数。</p>
-<h4 id="1-2-torch-Storage"><a href="#1-2-torch-Storage" class="headerlink" title="1.2 torch.Storage"></a>1.2 torch.Storage</h4><p>负责torch.Tensor底层的数据存储。一个k阶张量，数值排列一般从第k维度开始。</p>
-<h4 id="1-3-torch-Tensor"><a href="#1-3-torch-Tensor" class="headerlink" title="1.3 torch.Tensor"></a>1.3 torch.Tensor</h4><p>包含各种张量方法。对于Pytorch中的张量方法，后缀带有下划线（如Tensor.add_()），则它会修改张量本身的数据，反之则会返回一个新的张量。</p>
-<h4 id="1-4-torch-nn"><a href="#1-4-torch-nn" class="headerlink" title="1.4 torch.nn"></a>1.4 torch.nn</h4><p> Pytorch 神经网络模块化的核心，定义了一系列神经网络模块和损失函数。</p>
-<p>可以通过继承nn.Module类并重写forward方法来实现一个新的神经网络。一般来说，torch.nn 里定义的神经网络模块都含有参数，可以对这些参数使用优化器进行训练。</p>
-<h4 id="1-5-torch-nn-init"><a href="#1-5-torch-nn-init" class="headerlink" title="1.5 torch.nn.init"></a>1.5 torch.nn.init</h4><p>定义了神经网络权重的初始化。（相当重要，初始取值不合适可能导致后续优化过程收敛慢或者不收敛。）</p>
-<p>包含很多初始化方法，包括均匀初始化、正态分布归一初始化等。</p>
-<h4 id="1-6-torch-nn-functional"><a href="#1-6-torch-nn-functional" class="headerlink" title="1.6 torch.nn.functional"></a>1.6 torch.nn.functional</h4><p>函数模块，定义一系列和神经网络相关的函数，包括卷积函数、池化函数、不常用的激活函数。</p>
-<p>torch.nn 中定义的模块一般会调用 torch.nn.functional 里的函数，比如 nn.ConvNd模块会调用 nn.functional.convNd 函数。</p>
-<h4 id="1-7-torch-optim"><a href="#1-7-torch-optim" class="headerlink" title="1.7 torch.optim"></a>1.7 torch.optim</h4><p>定义一系列的优化器。例如：SGD、Adagrad、RMSprop、Adam、Ir_scheduler等。</p>
-<h4 id="1-8-torch-cuda"><a href="#1-8-torch-cuda" class="headerlink" title="1.8 torch.cuda"></a>1.8 torch.cuda</h4><p>与CUDA运算相关的一系列函数。</p>
-<h4 id="1-9-torch-autograd"><a href="#1-9-torch-autograd" class="headerlink" title="1.9 torch.autograd"></a>1.9 torch.autograd</h4><p>自动微分算法模块，定义了一系列的自动微分函数。</p>
-<h4 id="1-10-torch-distributed"><a href="#1-10-torch-distributed" class="headerlink" title="1.10 torch.distributed"></a>1.10 torch.distributed</h4><p>分布式计算模块，提供Pytorch并行运行环境，主要支持后端有MPI、Gloo、NCCL 三种。</p>
-<p>Pytorch 的分布式工作原理主要是启动多个并行的进程，每个进程都拥有一个模型的备份，然后输入不同的训练数据到多个并行的进程，计算损失函数，每个进程独立地做反向传播，最后对所有进程权重张量的梯度做归约（Reduce）。</p>
-<h4 id="1-11-torch-hub"><a href="#1-11-torch-hub" class="headerlink" title="1.11 torch.hub"></a>1.11 torch.hub</h4><p>提供一系列预训练的模型。</p>
-<h4 id="1-12-torch-jit"><a href="#1-12-torch-jit" class="headerlink" title="1.12 torch.jit"></a>1.12 torch.jit</h4><p>即时编译器，把 Pytorch 的动态图转换成可以优化和序列化的静态图。</p>
-<h4 id="1-13-torch-multiprocessing"><a href="#1-13-torch-multiprocessing" class="headerlink" title="1.13 torch.multiprocessing"></a>1.13 torch.multiprocessing</h4><p>提供多进程的API，可以启动不同的进程，还提供了与 Python原生的多进程 API（threading）相同的一系列函数，包括Lock、Queue等。</p>
-<h4 id="1-14-torch-random"><a href="#1-14-torch-random" class="headerlink" title="1.14 torch.random"></a>1.14 torch.random</h4><p>提供了一系列的方法来保存和设置随机数生成器的状态。</p>
-<h4 id="1-15-torch-onnx"><a href="#1-15-torch-onnx" class="headerlink" title="1.15 torch.onnx"></a>1.15 torch.onnx</h4><p>可以导出和加载ONNX格式的深度学习模型描述文件，方便不同深度学习框架之间交换模型。</p>
-<h3 id="2-torch-utils辅助模块"><a href="#2-torch-utils辅助模块" class="headerlink" title="2 torch.utils辅助模块"></a>2 torch.utils辅助模块</h3><h4 id="2-1-torch-utils-data"><a href="#2-1-torch-utils-data" class="headerlink" title="2.1 torch.utils.data"></a>2.1 torch.utils.data</h4><p>引入Dataset和DataLoader的概念。</p>
-<h4 id="2-2-torch-utils-tensorboard"><a href="#2-2-torch-utils-tensorboard" class="headerlink" title="2.2 torch.utils.tensorboard"></a>2.2 torch.utils.tensorboard</h4><p>数据可视化工具，可以很方便地观察中间输出的张量，也可以方便的调试深度学习模型。</p>
-<h3 id="3-torchvision"><a href="#3-torchvision" class="headerlink" title="3 torchvision"></a>3 torchvision</h3><p>包含了目前流行的数据集、计算机视觉的模型 和 常用的图片转换工具。</p>
-<h4 id="3-1-torchvision-datasets"><a href="#3-1-torchvision-datasets" class="headerlink" title="3.1 torchvision.datasets"></a>3.1 torchvision.datasets</h4><p>包含以下数据集。</p>
-<ul>
-<li>MNIST</li>
-<li>COCO（用于图像标注和目标检测）(Captioning and Detection)</li>
-<li>LSUN Classification</li>
-<li>ImageFolder</li>
-<li>Imagenet-12</li>
-<li>CIFAR10 and CIFAR100</li>
-<li>STL10</li>
-</ul>
-<h4 id="3-2-torchvision-models"><a href="#3-2-torchvision-models" class="headerlink" title="3.2 torchvision.models"></a>3.2 torchvision.models</h4><p>包含以下计算机视觉模型结构。</p>
-<ul>
-<li>AlexNet</li>
-<li>VGG</li>
-<li>ResNet</li>
-<li>InceptionNet</li>
-<li>DenseNet</li>
-</ul>
-
+          <h3 id="pytorch核心模块">1 Pytorch核心模块</h3>
+<h4 id="torch">1.1 torch</h4>
+<p>包含Pytorch常用的激活函数、Tensor操作、生成一定形状Tensor的函数。</p>
+<h4 id="torch.storage">1.2 torch.Storage</h4>
+<p>负责torch.Tensor底层的数据存储。一个k阶张量，数值排列一般从第k维度开始。</p>
+<h4 id="torch.tensor">1.3 torch.Tensor</h4>
+<p>包含各种张量方法。对于Pytorch中的张量方法，后缀带有下划线（如Tensor.add_()），则它会修改张量本身的数据，反之则会返回一个新的张量。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/03/08/Pytorch%E5%AE%8F%E8%A7%82%E4%B8%80%E8%A7%88/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -332,7 +306,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.5k</span>
+              <span>3.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -351,7 +325,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="二元关系"><a href="#二元关系" class="headerlink" title="二元关系"></a>二元关系</h4><p>设R是集合M上的一个二元关系</p>
+          <h4 id="二元关系">二元关系</h4>
+<p>设R是集合M上的一个二元关系</p>
 <p><strong>自反性</strong>：任意a属于M，都有(a,a)属于R</p>
 <p>反自反性：任意a属于M，都有(a,a)不属于R</p>
 <p><strong>对称性</strong>：任意(a,b)属于R，有(b,a)属于R</p>
@@ -446,19 +421,20 @@
 
       
           <p>使用Hexo创建自己的个人博客网站！</p>
-<h3 id="简单的操作"><a href="#简单的操作" class="headerlink" title="简单的操作"></a>简单的操作</h3><h5 id="Hexo三部曲"><a href="#Hexo三部曲" class="headerlink" title="Hexo三部曲"></a>Hexo三部曲</h5><p>进行任何更改操作后，运行下面三行指令来更新网站：</p>
+<h3 id="简单的操作">简单的操作</h3>
+<h5 id="hexo三部曲">Hexo三部曲</h5>
+<p>进行任何更改操作后，运行下面三行指令来更新网站：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
 <p>或者用下面一行来本地调试：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<h5 id="创建博文"><a href="#创建博文" class="headerlink" title="创建博文"></a>创建博文</h5><p>在<code>\source\_posts</code>下添加<code>.md</code>文件</p>
-<h5 id="分类、添加标签"><a href="#分类、添加标签" class="headerlink" title="分类、添加标签"></a>分类、添加标签</h5><p>注意一篇文章只能有一个分类，但可以嵌套分类。</p>
+<h5 id="创建博文">创建博文</h5>
+<p>在<code>\source\_posts</code>下添加<code>.md</code>文件</p>
+<h5 id="分类添加标签">分类、添加标签</h5>
+<p>注意一篇文章只能有一个分类，但可以嵌套分类。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">这是一个标题</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="string">-分类</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="string">-标签1</span></span><br><span class="line"><span class="string">-标签2</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="预览摘要"><a href="#预览摘要" class="headerlink" title="预览摘要"></a>预览摘要</h5><p>在文章中插入下面的标签，标签以下的内容需要点击全文阅读按钮。</p>
+<h5 id="预览摘要">预览摘要</h5>
+<p>在文章中插入下面的标签，标签以下的内容需要点击全文阅读按钮。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -540,7 +516,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>​	来自lzy的第一篇博文~</p>
+          <p>​ 来自lzy的第一篇博文~</p>
 
       
     </div>
@@ -780,6 +756,8 @@ $(document).ready(function() {
 
 
 
+
+  
 
   
 
